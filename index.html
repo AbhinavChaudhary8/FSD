@@ -1,0 +1,47 @@
+{<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bulb{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(86, 84, 84);
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        let bulbOn = false;
+        let lastColor = "rgb(86, 84, 84)";
+
+        function colorHandler(color){
+            lastColor = color;
+            if(bulbOn){
+                document.getElementById("bulb").style.backgroundColor = color;
+            }
+        }
+
+        function toggleBulb(){
+            bulbOn = !bulbOn;
+            const bulb = document.getElementById("bulb");
+            if(bulbOn){
+                bulb.style.backgroundColor = lastColor;
+            } else {
+                bulb.style.backgroundColor = "rgb(86, 84, 84)";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id ="bulb"></div>
+   
+    <input type="button" value="RED" onclick="colorHandler(this.value)">
+    <input type="button" value="GREEN" onclick="colorHandler(this.value)">
+    <input type="button" value="YELLOW" onclick="colorHandler(this.value)">
+    <input type="button" value="BLUE" onclick="colorHandler(this.value)">
+    <input type="button" value="ON/OFF" onclick="toggleBulb()">
+</body>
+</html>
