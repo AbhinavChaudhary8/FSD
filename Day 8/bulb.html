@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Center Bulb</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    #bulb {
+      height: 200px;
+      width: 200px;
+      background-color: rgb(101, 98, 98);
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="button"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function colorHandler(color) {
+      const bulb = document.getElementById("bulb");
+      bulb.style.backgroundColor = color.toLowerCase(); 
+    }
+  </script>
+</head>
+<body>
+  <div id="bulb"></div>
+  <div class="button-container">
+    <input type="button" value="RED" onclick="colorHandler(value)">
+    <input type="button" value="GREEN" onclick="colorHandler(value)">
+    <input type="button" value="YELLOW" onclick="colorHandler(value)">
+    <input type="button" value="BLUE" onclick="colorHandler(value)">
+  </div>
+</body>
+</html>
